@@ -1,1 +1,47 @@
-body {}
+@import "bourbon";
+@import "neat";
+@import "normalize";
+@import "main";
+@import "base/base";
+
+header {
+	background-color: $bkrdColor;
+	
+	.title {
+		@include span-columns(9);
+
+	}
+
+	nav {
+		@include span-columns(3);
+	
+		ul {
+			text-decoration: none;
+
+			li {
+				display: inline-block;
+				margin-right: 1em;
+			}
+		}
+	}
+}
+
+.intro {
+	@include outer-container(70%);
+}
+
+.features {
+	@include outer-container(80%);
+
+	.feature{
+		@include span-columns(4);
+	}
+}
+
+.call-to-action {
+	@include outer-container(20%);
+}
+
+footer {
+	@include outer-container;
+}

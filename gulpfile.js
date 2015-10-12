@@ -2,6 +2,7 @@ var gulp = require('gulp');
 
 var jshint = require('gulp-jshint');
 var sass = require('gulp-sass');
+var neat = require('node-neat');
 var imagemin = require('gulp-imagemin');
 var browserify = require('browserify');
 var uglify = require('gulp-uglify');
@@ -21,7 +22,9 @@ gulp.task('jshint', function() {
 // Compile Sass task
 gulp.task('sass', function() {
   return gulp.src('scss/*.scss')
-    .pipe(sass())
+    .pipe(sass({
+      includePaths: require('node-neat').includePaths
+    }))
     .pipe(gulp.dest('css'));
 });
 
