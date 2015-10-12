@@ -562,12 +562,14 @@ textarea {
     page-break-after: avoid; } }
 
 header {
-  background-color: #339966; }
+  background-color: #339966;
+  overflow: auto; }
   header .title {
     float: left;
     display: block;
     margin-right: 2.35765%;
-    width: 74.41059%; }
+    width: 65.88078%;
+    margin-left: 8.5298%; }
     header .title:last-child {
       margin-right: 0; }
   header nav {
@@ -595,7 +597,8 @@ header {
 .features {
   max-width: 80%;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  margin: 1em auto; }
   .features::after {
     clear: both;
     content: "";
@@ -609,13 +612,19 @@ header {
       margin-right: 0; }
 
 .call-to-action {
-  max-width: 20%;
-  margin-left: auto;
-  margin-right: auto; }
-  .call-to-action::after {
-    clear: both;
-    content: "";
-    display: table; }
+  text-align: center;
+  margin: 2em auto; }
+
+.call-to-action a {
+  display: inline-block;
+  font-size: 2em;
+  padding: .5em;
+  background-color: #85d6ad; }
+  .call-to-action a:link, .call-to-action a:visited, .call-to-action a:active {
+    color: black;
+    text-decoration: none; }
+  .call-to-action a:hover {
+    color: white; }
 
 footer {
   max-width: 68em;

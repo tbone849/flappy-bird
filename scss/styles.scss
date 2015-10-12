@@ -6,10 +6,11 @@
 
 header {
 	background-color: $bkrdColor;
-	
-	.title {
-		@include span-columns(9);
+	overflow: auto;
 
+	.title {
+		@include span-columns(8);
+		@include shift(1);
 	}
 
 	nav {
@@ -32,6 +33,7 @@ header {
 
 .features {
 	@include outer-container(80%);
+	margin: 1em auto;
 
 	.feature{
 		@include span-columns(4);
@@ -39,7 +41,24 @@ header {
 }
 
 .call-to-action {
-	@include outer-container(20%);
+	text-align: center;
+	margin: 2em auto;
+}
+
+.call-to-action a {
+	display: inline-block;
+	font-size: 2em;
+	padding: .5em;
+	background-color: lighten($bkrdColor, 28);
+
+	&:link, &:visited, &:active {
+		color: black;
+    	text-decoration: none;
+	}
+
+	&:hover {
+		color: white;
+	}
 }
 
 footer {
