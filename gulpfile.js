@@ -11,6 +11,7 @@ var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
+var minifyCss = require('gulp-minify-css');
 
 // JavaScript linting task
 gulp.task('jshint', function() {
@@ -26,6 +27,13 @@ gulp.task('sass', function() {
       includePaths: require('node-neat').includePaths
     }))
     .pipe(gulp.dest('css'));
+});
+
+// Minify CSS
+gulp.task('minify-css', ['sass'], function() {
+  return gulp.src('css/*.css')
+    .pipe(minifyCss({compatibility: 'ie8'}))
+    .pipe(gulp.dest('build/css'));
 });
 
 // Watch task
@@ -69,4 +77,4 @@ gulp.task('images', function() {
 });
 
 // Build task
-gulp.task('build', ['jshint', 'sass', 'html', 'scripts', 'styles', 'images']);
+gulp.task('build', ['jshint', 'sass', 'minify-css', 'html', 'scripts', 'styles', 'images']);
