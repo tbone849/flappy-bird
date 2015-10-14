@@ -11,24 +11,33 @@ header {
 	.title {
 		@include span-columns(8);
 		@include shift(1);
+		@include media($mobile){
+			@include span-columns(4);
+			margin: .3em 1em;
+		}
+	}
+}
+
+nav {
+	@include span-columns(3);
+	@include media($mobile){
+		@include span-columns(4);
 	}
 
-	nav {
-		@include span-columns(3);
-	
-		ul {
-			text-decoration: none;
-
-			li {
-				display: inline-block;
-				margin-right: 1em;
-			}
+	ul {
+		text-decoration: none;
+		li {
+			display: inline-block;
+			margin-right: 1em;
 		}
 	}
 }
 
 .intro {
 	@include outer-container(70%);
+	@include media($mobile){
+		@include outer-container(80%);
+	}
 }
 
 .features {
@@ -37,6 +46,9 @@ header {
 
 	.feature{
 		@include span-columns(4);
+		@include media($mobile){
+			@include span-columns(4);
+		}
 	}
 }
 
@@ -63,4 +75,5 @@ header {
 
 footer {
 	@include outer-container;
+	text-align: center;
 }

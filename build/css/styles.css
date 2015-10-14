@@ -572,18 +572,36 @@ header {
     margin-left: 8.5298%; }
     header .title:last-child {
       margin-right: 0; }
-  header nav {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 23.23176%; }
-    header nav:last-child {
-      margin-right: 0; }
-    header nav ul {
-      text-decoration: none; }
-      header nav ul li {
-        display: inline-block;
-        margin-right: 1em; }
+    @media screen and (max-width: 350px) {
+      header .title {
+        float: left;
+        display: block;
+        margin-right: 7.42297%;
+        width: 100%;
+        margin: 0.3em 1em; }
+        header .title:last-child {
+          margin-right: 0; } }
+
+nav {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%; }
+  nav:last-child {
+    margin-right: 0; }
+  @media screen and (max-width: 350px) {
+    nav {
+      float: left;
+      display: block;
+      margin-right: 7.42297%;
+      width: 100%; }
+      nav:last-child {
+        margin-right: 0; } }
+  nav ul {
+    text-decoration: none; }
+    nav ul li {
+      display: inline-block;
+      margin-right: 1em; }
 
 .intro {
   max-width: 70%;
@@ -593,6 +611,15 @@ header {
     clear: both;
     content: "";
     display: table; }
+  @media screen and (max-width: 350px) {
+    .intro {
+      max-width: 80%;
+      margin-left: auto;
+      margin-right: auto; }
+      .intro::after {
+        clear: both;
+        content: "";
+        display: table; } }
 
 .features {
   max-width: 80%;
@@ -610,6 +637,14 @@ header {
     width: 31.76157%; }
     .features .feature:last-child {
       margin-right: 0; }
+    @media screen and (max-width: 350px) {
+      .features .feature {
+        float: left;
+        display: block;
+        margin-right: 7.42297%;
+        width: 100%; }
+        .features .feature:last-child {
+          margin-right: 0; } }
 
 .call-to-action {
   text-align: center;
@@ -629,7 +664,8 @@ header {
 footer {
   max-width: 68em;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  text-align: center; }
   footer::after {
     clear: both;
     content: "";
