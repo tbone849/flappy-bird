@@ -568,11 +568,11 @@ header {
     float: left;
     display: block;
     margin-right: 2.35765%;
-    width: 65.88078%;
+    width: 48.82117%;
     margin-left: 8.5298%; }
     header .title:last-child {
       margin-right: 0; }
-    @media screen and (max-width: 350px) {
+    @media screen and (max-width: 699px) {
       header .title {
         float: left;
         display: block;
@@ -581,20 +581,36 @@ header {
         margin: 0.3em 1em; }
         header .title:last-child {
           margin-right: 0; } }
+    @media screen and (min-width: 550px) and (max-width: 699px) {
+      header .title {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 40.29137%; }
+        header .title:last-child {
+          margin-right: 0; } }
 
 nav {
   float: left;
   display: block;
   margin-right: 2.35765%;
-  width: 23.23176%; }
+  width: 40.29137%; }
   nav:last-child {
     margin-right: 0; }
-  @media screen and (max-width: 350px) {
+  @media screen and (max-width: 699px) {
     nav {
       float: left;
       display: block;
       margin-right: 7.42297%;
       width: 100%; }
+      nav:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 550px) and (max-width: 699px) {
+    nav {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 48.82117%; }
       nav:last-child {
         margin-right: 0; } }
   nav ul {
@@ -611,7 +627,7 @@ nav {
     clear: both;
     content: "";
     display: table; }
-  @media screen and (max-width: 350px) {
+  @media screen and (max-width: 699px) {
     .intro {
       max-width: 80%;
       margin-left: auto;
@@ -637,12 +653,20 @@ nav {
     width: 31.76157%; }
     .features .feature:last-child {
       margin-right: 0; }
-    @media screen and (max-width: 350px) {
+    @media screen and (max-width: 699px) {
       .features .feature {
         float: left;
         display: block;
         margin-right: 7.42297%;
         width: 100%; }
+        .features .feature:last-child {
+          margin-right: 0; } }
+    @media screen and (min-width: 700px) {
+      .features .feature {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 31.76157%; }
         .features .feature:last-child {
           margin-right: 0; } }
 

@@ -9,19 +9,25 @@ header {
 	overflow: auto;
 
 	.title {
-		@include span-columns(8);
+		@include span-columns(6);
 		@include shift(1);
 		@include media($mobile){
 			@include span-columns(4);
 			margin: .3em 1em;
 		}
+		@include media($medium){
+			@include span-columns(5);
+		}
 	}
 }
 
 nav {
-	@include span-columns(3);
+	@include span-columns(5);
 	@include media($mobile){
 		@include span-columns(4);
+	}
+	@include media($medium){
+		@include span-columns(6);
 	}
 
 	ul {
@@ -47,6 +53,9 @@ nav {
 	.feature{
 		@include span-columns(4);
 		@include media($mobile){
+			@include span-columns(4);
+		}
+		@include media($tablet){
 			@include span-columns(4);
 		}
 	}
