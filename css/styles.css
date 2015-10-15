@@ -618,6 +618,11 @@ nav {
     nav ul li {
       display: inline-block;
       margin-right: 1em; }
+  nav a:link, nav a:visited, nav a:active {
+    color: white;
+    text-decoration: none; }
+  nav a:hover {
+    color: black; }
 
 .intro {
   max-width: 70%;
