@@ -561,6 +561,18 @@ textarea {
   h3 {
     page-break-after: avoid; } }
 
+html {
+  height: 100%; }
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 4rem;
+  min-height: 100%; }
+
+header, section {
+  position: relative; }
+
 header {
   background-color: #339966;
   overflow: auto; }
@@ -594,7 +606,8 @@ nav {
   float: left;
   display: block;
   margin-right: 2.35765%;
-  width: 40.29137%; }
+  width: 40.29137%;
+  text-align: right; }
   nav:last-child {
     margin-right: 0; }
   @media screen and (max-width: 699px) {
@@ -677,7 +690,7 @@ nav {
 
 .call-to-action {
   text-align: center;
-  margin: 2em auto; }
+  margin: 2em auto 3em; }
 
 .call-to-action a {
   display: inline-block;
@@ -691,11 +704,12 @@ nav {
     color: white; }
 
 footer {
-  max-width: 68em;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center; }
-  footer::after {
-    clear: both;
-    content: "";
-    display: table; }
+  color: white;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2em 0;
+  text-align: center;
+  background-color: #464646; }

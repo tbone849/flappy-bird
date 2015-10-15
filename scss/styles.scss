@@ -4,6 +4,22 @@
 @import "main";
 @import "base/base";
 
+html {
+	height: 100%;
+}
+
+body {
+	position: relative;
+  	margin: 0;
+  	padding-bottom: 4rem;
+  	min-height: 100%;
+}
+
+
+header, section {
+	position: relative;
+}
+
 header {
 	background-color: $bkrdColor;
 	overflow: auto;
@@ -23,6 +39,7 @@ header {
 
 nav {
 	@include span-columns(5);
+	text-align: right;
 	@include media($mobile){
 		@include span-columns(4);
 	}
@@ -72,7 +89,7 @@ nav {
 
 .call-to-action {
 	text-align: center;
-	margin: 2em auto;
+	margin: 2em auto 3em;
 }
 
 .call-to-action a {
@@ -92,6 +109,13 @@ nav {
 }
 
 footer {
-	@include outer-container;
+	color: white;
+	position: absolute;
+  	right: 0;
+  	bottom: 0;
+  	left: 0;
+	width: 100%;
+	padding: 2em 0;
 	text-align: center;
+	background-color: #464646;
 }
