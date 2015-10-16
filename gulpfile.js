@@ -22,7 +22,7 @@ gulp.task('jshint', function() {
 
 // Watch task
 gulp.task('watch', ['build'], function() {
-  return gulp.watch('*', ['build'] );
+  return gulp.watch('**/*', ['build'] );
 });
 
 // Default task

@@ -77,6 +77,15 @@ nav {
 	margin: 1em auto;
 
 	.feature{
+		border: solid 1px #9F9F9F;
+		-webkit-border-radius: 30px;
+		border-radius: 30px;
+		padding: 0 1em;
+		margin-bottom: 2em;
+		margin-top: 2em;
+		h3 {
+			text-align: center;
+		}
 		@include span-columns(4);
 		@include media($mobile){
 			@include span-columns(4);
@@ -85,6 +94,18 @@ nav {
 			@include span-columns(4);
 		}
 	}
+}
+
+img { 
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	width: 75%;
+}
+
+.feature-img {
+	-webkit-border-radius: 30px;
+	border-radius: 30px;
 }
 
 .call-to-action {
