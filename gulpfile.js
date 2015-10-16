@@ -20,26 +20,9 @@ gulp.task('jshint', function() {
     .pipe(jshint.reporter('default'));
 });
 
-// Compile Sass task
-gulp.task('sass', function() {
-  return gulp.src('scss/*.scss')
-    .pipe(sass({
-      includePaths: require('node-neat').includePaths
-    }))
-    .pipe(gulp.dest('css'));
-});
-
-// Minify CSS
-gulp.task('minify-css', ['sass'], function() {
-  return gulp.src('css/*.css')
-    .pipe(minifyCss({compatibility: 'ie8'}))
-    .pipe(gulp.dest('build/css'));
-});
-
 // Watch task
-gulp.task('watch', function() {
-  gulp.watch('js/*.js', ['jshint']);
-  gulp.watch('scss/*.scss', ['sass']);
+gulp.task('watch', ['build'], function() {
+  return gulp.watch('*', ['build'] );
 });
 
 // Default task
@@ -47,7 +30,7 @@ gulp.task('default', ['jshint', 'sass', 'watch']);
 
 // Minify index
 gulp.task('html', function() {
-  gulp.src('index.html')
+  return gulp.src('index.html')
     .pipe(minifyHTML())
     .pipe(gulp.dest('build/'));
 });
@@ -64,7 +47,11 @@ gulp.task('scripts', function() {
 
 // Styles build task, concatenates all the files
 gulp.task('styles', function() {
-  gulp.src('css/*.css')
+  return gulp.src('scss/*.scss')
+    .pipe(sass({
+      includePaths: require('node-neat').includePaths
+    }))
+    .pipe(minifyCss({compatibility: 'ie8'}))
     .pipe(concat('styles.css'))
     .pipe(gulp.dest('build/css'));
 });
@@ -76,5 +63,10 @@ gulp.task('images', function() {
     .pipe(gulp.dest('build/img'));
 });
 
+gulp.task('vendor', function() {
+  gulp.src('js/vendor/*')
+    .pipe(gulp.dest('build/js/vendor'));
+});
+
 // Build task
-gulp.task('build', ['jshint', 'sass', 'minify-css', 'html', 'scripts', 'styles', 'images']);
+gulp.task('build', ['jshint', 'html', 'scripts', 'styles', 'images', 'vendor']);
