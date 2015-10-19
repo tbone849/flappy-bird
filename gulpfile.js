@@ -22,7 +22,9 @@ gulp.task('jshint', function() {
 
 // Watch task
 gulp.task('watch', ['build'], function() {
-  return gulp.watch('**/*', ['build'] );
+  gulp.watch('index.html', ['build'] );
+  gulp.watch('js/*.js', ['build']);
+  gulp.watch('scss/*.scss', ['build']);
 });
 
 // Default task
@@ -69,4 +71,4 @@ gulp.task('vendor', function() {
 });
 
 // Build task
-gulp.task('build', ['jshint', 'html', 'scripts', 'styles', 'images', 'vendor']);
+gulp.task('build', ['jshint', 'styles', 'scripts', 'html', 'images', 'vendor']);
