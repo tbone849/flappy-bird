@@ -21,6 +21,12 @@ body {
     background-repeat: none;
     background-size: cover;
     background-position: bottom;
+    @include media($mobile){
+		background-image: url(../img/clouds-small.png);
+	}
+	@include media($medium){
+		background-image: url(../img/clouds-medium.png);
+	}
 }
 
 .container {
@@ -71,7 +77,7 @@ nav {
 	}
 
 	a:link, a:visited, a:active {
-		color: black;
+		color: white;
     	text-decoration: none;
 	}
 
